@@ -7,6 +7,12 @@ __pycache__/
 
 Flask_old/
 
+cours/
+python/
+package-lock.json
+README.md
+rest_api/
+
 # firestore credential
 *cred.json
 
