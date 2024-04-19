@@ -106,8 +106,21 @@ def variance(tableau: list[int]) -> float:
     Function that returns the variance of the elements of the array
     :param tableau: the array to find the variance of
     :return: the variance of the elements of the array
+    [1,2,3,4,5]
     """
-    return None
+    # mean = average(tableau)           O(n)
+
+    # variance = 0                      O(1)
+    # for xi in tableau:                O(n)
+    #     variance += (xi - mean)** 2   (O(1)*n) -> O(n)
+    
+    # return variance / len(tableau)    O(1) 
+
+    variance = 0                              #O(1) // O(n^2)
+    for xi in tableau:                        #O(n)
+        variance += (xi-average(tableau))**2  #(O(n)*n) -> O(n^2)
+    
+    return variance / len(tableau)            #0(1)
 
 def standard_deviation(tableau: list[int]) -> float:
     """
@@ -156,7 +169,14 @@ def is_list(tableau) -> bool:
     :param tableau: the array to check if it is a table
     :return: True if the array is a table, False otherwise
     """
-    return None
+    # return type(tableau) == list 
+
+    # if(type(tableau) == list):
+    #     return True
+    # else: 
+    #     return False
+    
+    return True if type(tableau) == list else False
 
 
 def is_list_of_numbers(tableau) -> bool:
@@ -165,7 +185,16 @@ def is_list_of_numbers(tableau) -> bool:
     :param tableau: the array to check if it is a table of numbers
     :return: True if the array is a table of numbers, False otherwise
     """
-    return None
+    if not is_list(tableau) or tableau == []:
+        return False
+    
+    for elem in tableau:
+        if(type(elem) != int or type(elem) != float or type(elem) != complex):
+            return False
+    
+    return True
+        
+
 
 def sort_ascending(arr: list[int]) -> list[int]:
     """
