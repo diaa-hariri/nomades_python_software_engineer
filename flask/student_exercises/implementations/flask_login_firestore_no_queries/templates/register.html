@@ -1,0 +1,24 @@
+{%extends 'includes/base.html'%}
+
+{%block title%}
+Signup
+{%endblock%}
+{%block content%}
+    <form action="{{ url_for('register') }}" method="POST">
+      <div class="form-group">
+        <label for="tbxEmail">Email address</label>
+        <input type="email" class="form-control" name="tbxEmail" id="tbxEmail" aria-describedby="emailHelp" placeholder="User Email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="tbxUid">User ID</label>
+        <input type="text" class="form-control" name="tbxUid" id="tbxUid" aria-describedby="emailHelp" placeholder="User ID">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="tbxPwd">Password</label>
+        <input type="password" name="tbxPwd" class="form-control" id="tbxPwd" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{%endblock%}
