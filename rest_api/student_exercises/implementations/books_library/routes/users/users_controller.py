@@ -22,6 +22,16 @@ class UserController(MethodView):
   def post(self, user: dict):
     return user_service.create_user(user)
 
+@users.route("/<id>")
+class SingleUserController(MethodView):
+  def get(self, id):
+    pass
+  
+  def delete(self, id):
+    pass
+
+  def put(self, id):
+    pass
 
 
 @users.route("/one")
