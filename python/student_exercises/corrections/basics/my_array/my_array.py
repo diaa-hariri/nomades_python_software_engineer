@@ -4,10 +4,10 @@ def sum(tableau: list[int]) -> int:
     :param tableau: the array to sum
     :return: the sum of the elements of the array
     """
-    result = 0
-    for current_integer in tableau:
-        result = result + current_integer
-    return result 
+    somme = 0
+    for nombre in tableau:
+        somme = somme + nombre
+    return somme
 
 
 def average(tableau: list[int]) -> float:
@@ -16,7 +16,11 @@ def average(tableau: list[int]) -> float:
     :param tableau: the array to average
     :return: the average of the elements of the array
     """
-    return None
+    # somme = 0
+    # for nombre in tableau:
+    #     somme = somme + nombre
+    # return somme / len(tableau)
+    return sum(tableau) / len(tableau)
 
 
 def min(tableau: list[int]) -> int:
