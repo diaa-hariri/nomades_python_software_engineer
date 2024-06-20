@@ -16,7 +16,6 @@ cours/
 python/exemples/test_numpy.py
 
 python/student_exercises/implementations/basic_input_output/
-python/student_exercises/implementations/pygame/
 
 python/student_exercises/corrections/test.py
 python/student_exercises/corrections/python_games.py
@@ -28,10 +27,7 @@ python/student_exercises/corrections/basics/my_lists_comprehensions/
 python/student_exercises/corrections/basics/my_tuples/
 python/student_exercises/corrections/basics/my_sets/
 python/student_exercises/corrections/basics/my_strings/
-python/student_exercises/corrections/bruteforce/
-python/student_exercises/corrections/input_io/
 python/student_exercises/corrections/pygame/
-python/student_exercises/corrections/random_password_generator/
 
 numpy_pandas/
 flask/
