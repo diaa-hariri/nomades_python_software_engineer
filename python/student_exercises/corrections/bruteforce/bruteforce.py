@@ -22,22 +22,35 @@ you can write a program that will generate all possible combinations of 5 letter
 import hashlib
 import string
 import time
+from tqdm import tqdm
+import random
 
 def brute_force_password(charset, length, target_hash):
     MAX_ITER = len(charset) ** length
+    l_charset = list(charset)
+    random.shuffle(l_charset)
+    charset = "".join(l_charset)
     start_time = time.time()
 
-    for l1 in charset:          # 26
-      for l2 in charset:        # 26**2
-        for l3 in charset:      # 26**3
-          for l4 in charset:    # 26**4
-            for l5 in charset:  # 26**5
-              # p = "".join([l1, l2, l3, l4, l5])
-              p = l1+l2+l3+l4+l5
-              password = hashlib.sha256(p.encode()).hexdigest()
-              if password == target_hash:
-                  # you found the password hourra
-                  return p, time.time() - start_time
+    for i in tqdm(range(MAX_ITER)):
+        p = ""
+        for size in range(length-1, -1, -1):
+            p += charset[(i//len(charset)**size)%len(charset)]
+            password = hashlib.sha256(p.encode()).hexdigest()           
+            if password == target_hash:
+              return p, time.time()
+
+    # for l1 in charset:          # 26
+    #   for l2 in charset:        # 26**2
+    #     for l3 in charset:      # 26**3
+    #       for l4 in charset:    # 26**4
+    #         for l5 in charset:  # 26**5
+    #           # p = "".join([l1, l2, l3, l4, l5])
+    #           p = l1+l2+l3+l4+l5
+    #           password = hashlib.sha256(p.encode()).hexdigest()
+    #           if password == target_hash:
+    #               # you found the password hourra
+    #               return p, time.time() - start_time
               
     return None, time.time() - start_time
 
