@@ -33,4 +33,5 @@ numpy_pandas/student_exercises/corrections/ML/
 numpy_pandas/student_exercises/corrections/numpy/
 numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/Selenium/
 
-flask/
+flask/example/
+flask/student_exercises/
