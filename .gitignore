@@ -33,5 +33,17 @@ numpy_pandas/student_exercises/corrections/ML/
 numpy_pandas/student_exercises/corrections/numpy/
 numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/Selenium/
 
-flask/example/
-flask/student_exercises/
+flask/example/firestore/
+flask/example/Firestore_posts/
+flask/example/flask_login_wtforms/
+flask/example/forms/
+flask/example/jinja/
+flask/example/posts_firestore/
+
+flask/student_exercises/implementations/Firestore_posts/
+flask/student_exercises/implementations/flask_login/
+flask/student_exercises/implementations/flask_login_firestore/
+flask/student_exercises/implementations/flask_login_wtf_firestore/
+
+flask/student_exercises/corrections/
+
