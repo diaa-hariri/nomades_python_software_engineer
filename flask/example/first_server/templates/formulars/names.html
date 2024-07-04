@@ -1,0 +1,11 @@
+{% extends '_base.html' %}
+
+{% block title %} Test forms {%endblock%}
+
+{% block content %}
+<form action="/names" method="POST">  
+  <input type="text" name="uid" placeholder="User ID">
+  <input type="password" name="pwd" placeholder="Password">
+  <input type="submit" value="Send">
+</form>
+{% endblock %}

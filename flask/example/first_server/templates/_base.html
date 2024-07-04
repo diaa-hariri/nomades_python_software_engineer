@@ -33,6 +33,18 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{ url_for('test_json') }}">Json</a>
           </li>
+          {% if "loggedin" in session and session["loggedin"] %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="">Register</a>
+            </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
@@ -56,6 +68,15 @@
     </div>
   </nav>
   <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for c, m in messages %}
+          <div class="alert alert-{{ c }}" role="alert">
+            {{ m }}
+          </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
     {% block content %}
     {% endblock %}
   </div>
