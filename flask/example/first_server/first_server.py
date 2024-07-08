@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, render_template, request, session, redirect, url_for, flash
+from routes.login.login_wtf import wtf_login
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "somesecret"
@@ -118,6 +119,10 @@ def secret():
 def index():
     session['count'] = session.get('count', 0) + 1
     return f'Count: {session["count"]}'
+
+
+
+app.register_blueprint(wtf_login)
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=8080, debug=True)

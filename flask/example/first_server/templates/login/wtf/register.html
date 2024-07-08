@@ -1,0 +1,43 @@
+{% extends '_base.html' %}
+
+{% block title %} Register | WTF {%endblock%}
+
+{% block content %}
+<form action="{{ url_for('wtf_login.register_wtf') }}" method="POST">    
+  <div class="form-group">
+    {{ form.email.label }}
+    {{ form.email(class="form-control") }}
+    {% if form.email.errors %}
+      <div class="alert alert-danger">
+        {% for error in form.email.errors %}
+          <span class="help-inline">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    {{ form.pwd.label }}
+    {{ form.pwd(class="form-control") }}
+    {% if form.pwd.errors %}
+      <div class="alert alert-danger">
+        {% for error in form.pwd.errors %}
+          <span class="help-inline">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.pwd_confirm.label }}
+    {{ form.pwd_confirm(class="form-control") }}
+    {% if form.pwd_confirm.errors %}
+      <div class="alert alert-danger">
+        {% for error in form.pwd_confirm.errors %}
+          <span class="help-inline">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}

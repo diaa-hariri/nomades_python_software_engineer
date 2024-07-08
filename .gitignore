@@ -40,9 +40,7 @@ flask/example/forms/
 flask/example/jinja/
 flask/example/posts_firestore/
 
-flask/student_exercises/implementations/Firestore_posts/
 flask/student_exercises/implementations/flask_login_firestore/
-flask/student_exercises/implementations/flask_login_wtf_firestore/
 
 flask/student_exercises/corrections/Firestore_posts/
 flask/student_exercises/corrections/first_server/
