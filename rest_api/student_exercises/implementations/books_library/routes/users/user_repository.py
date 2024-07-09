@@ -20,3 +20,8 @@ class UserRepository:
     _, docRef = self.collection.add(user)
     user.update({"id": docRef.id})
     return user
+
+# TODO: Create the repository function that change the user data in the database
+#   - Cretae the function for getting only one user given the id
+#   - Create the function for updating a specific user in the dataabse given the id
+#   - Create the function for deleting a specifiy user in the database given the id

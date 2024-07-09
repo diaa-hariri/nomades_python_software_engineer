@@ -22,3 +22,10 @@ class UsersController(MethodView):
   @users.response(status_code=201, schema=UserResponse)
   def post(self, user: dict):
     return user_service.create_user(user)
+  
+# TODO: Create routes to interract with a specific user
+#   - Use the methods GET, PUT, DELETE
+#   - find a way of getting the user_id as parameter aside the body
+#   - use @users.response to specify the response returned
+#   - use @users.argument to specify the body expected (Maybe create the body you need in DTO)
+#   - Create the corresponding functions inside the service and repository

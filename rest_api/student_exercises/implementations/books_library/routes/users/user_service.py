@@ -16,3 +16,6 @@ class UserService:
     user["salt"] = salt
     user["password"] = hashlib.sha256((user["password"]+salt).encode()).hexdigest()
     return self.repository.create_user(user)
+  
+# TODO: create the missing function that implement the get, update and delete on a specific user
+#   - ProTip: Try to specify in function signature the type you expect as parameters and the type of return of the function
