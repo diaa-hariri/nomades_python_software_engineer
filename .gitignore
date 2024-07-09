@@ -5,8 +5,6 @@
 exercises/
 __pycache__/
 
-Flask_old/
-
 cours/
 
 # firestore credential
