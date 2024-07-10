@@ -50,7 +50,6 @@ rest_api/course/
 rest_api/example/books_library/
 rest_api/example/docker/
 rest_api/example/todo/
-rest_api/example/jwt/
 
 rest_api/student_exercises/corrections/booksAPI/
 rest_api/student_exercises/corrections/docker/
