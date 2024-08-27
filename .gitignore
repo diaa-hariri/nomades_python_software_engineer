@@ -14,7 +14,6 @@ Flask_old/
 python/exemples/
 
 python/student_exercises/implementations/basic_input_output/
-python/student_exercises/implementations/bruteforce/
 python/student_exercises/implementations/input_io/
 python/student_exercises/implementations/pygame/
 
@@ -28,7 +27,6 @@ python/student_exercises/corrections/basic_input_output/
 python/student_exercises/corrections/bruteforce/
 python/student_exercises/corrections/input_io/
 python/student_exercises/corrections/pygame/
-python/student_exercises/corrections/random_password_generator/
 
 numpy_pandas/
 flask/
