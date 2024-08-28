@@ -140,8 +140,18 @@ def similars(arr1: list[int], arr2: list[int]) -> bool:
     :param arr2: the second array
     :return: True if the two arrays are similar, False otherwise
     """
-    return None
+    #return arr1 == arr2
+    if len(arr1) != len(arr2):
+        return False
+    
+    assert len(arr1) == len(arr2), "Arrays must have the same size"
 
+    for index in range(len(arr1)):
+        if arr1[index] != arr2[index]:
+            return False
+    return True
+            
+            
 
 def is_list(tableau) -> bool:
     """
@@ -149,7 +159,7 @@ def is_list(tableau) -> bool:
     :param tableau: the array to check if it is a table
     :return: True if the array is a table, False otherwise
     """
-    return None
+    return type(tableau) == list
 
 
 def is_list_of_numbers(tableau) -> bool:
@@ -158,7 +168,13 @@ def is_list_of_numbers(tableau) -> bool:
     :param tableau: the array to check if it is a table of numbers
     :return: True if the array is a table of numbers, False otherwise
     """
-    return None
+    if type(tableau) != list or len(tableau) == 0:
+        return False
+
+    for value in tableau:
+        if type(value) != int:
+            return False
+    return True
 
 def sort_ascending(arr: list[int]) -> list[int]:
     """
@@ -166,7 +182,16 @@ def sort_ascending(arr: list[int]) -> list[int]:
     :param arr: the array to sort
     :return: the sorted array in ascending order
     """
-    return None
+    list_sort=[]
+    for _ in range(0,len(arr)):
+        mini=arr[0]
+        for z in arr[1:]:
+            if z < mini:
+                mini=z
+        arr.remove(mini)
+        list_sort.append(mini)
+
+    return list_sort
 
 
 def sort_descending(arr: list[int]) -> list[int]:
@@ -175,7 +200,11 @@ def sort_descending(arr: list[int]) -> list[int]:
     :param arr: the array to sort
     :return: the sorted array in descending order
     """
-    return None
+    for i in range(len(arr)-1):
+        for j in range(i+1, len(arr)):
+            if arr[i] < arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+    return arr
 
 def median(tableau: list[int]) -> int:
     """
@@ -183,4 +212,12 @@ def median(tableau: list[int]) -> int:
     :param tableau: the array to find the median of
     :return: the median of the elements of the array
     """
-    return None
+
+    tableau = sort_ascending(tableau)
+    mid = len(tableau) // 2
+    return tableau[mid] if len(tableau) % 2 == 1 else (tableau[mid] + tableau[mid-1]) / 2
+
+    if len(tableau) % 2 == 0:
+        return (tableau[int(len(tableau) / 2)] + tableau[len(tableau) // 2 -1]) / 2
+    else:
+        return tableau[len(tableau) // 2]
