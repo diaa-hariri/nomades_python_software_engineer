@@ -14,7 +14,6 @@ Flask_old/
 python/exemples/
 
 python/student_exercises/implementations/basic_input_output/
-python/student_exercises/implementations/pygame/
 
 python/student_exercises/corrections/basics/my_dictionaries/
 python/student_exercises/corrections/basics/my_lists/
@@ -23,7 +22,6 @@ python/student_exercises/corrections/basics/my_sets/
 python/student_exercises/corrections/basics/my_strings/
 python/student_exercises/corrections/basics/my_tuples/
 python/student_exercises/corrections/basic_input_output/
-python/student_exercises/corrections/input_io/
 python/student_exercises/corrections/pygame/
 
 numpy_pandas/
