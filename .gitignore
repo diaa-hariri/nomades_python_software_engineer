@@ -24,5 +24,24 @@ python/student_exercises/corrections/basics/my_tuples/
 python/student_exercises/corrections/basic_input_output/
 python/student_exercises/corrections/pygame/
 
-numpy_pandas/
+numpy_pandas/examples/data_aquisition/REST_API/
+numpy_pandas/examples/data_aquisition/web_scrapping/basic/IMDB/
+numpy_pandas/examples/data_visualization/
+numpy_pandas/examples/ML/
+numpy_pandas/examples/jupyter/
+numpy_pandas/examples/numpy/
+numpy_pandas/examples/pandas/
+numpy_pandas/examples/matplotlib/
+
+numpy_pandas/student_exercises/corrections/data_aquisition/REST_API/
+numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/IMDB/
+numpy_pandas/student_exercises/corrections/data_aquisition/web_scrapping/Selenium/
+numpy_pandas/student_exercises/corrections/ML/
+numpy_pandas/student_exercises/corrections/numpy/
+numpy_pandas/student_exercises/corrections/pandas/
+
+numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
+numpy_pandas/student_exercises/implementations/numpy/
+numpy_pandas/student_exercises/implementations/pandas/
+
 flask/
