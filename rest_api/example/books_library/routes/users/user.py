@@ -15,16 +15,6 @@ class User:
     self.password = password
     self.salt = salt
 
-  def to_dict(self) -> dict:
-    return {
-      u"id": self.id,
-      u"firstname": self.firstname,
-      u"lastname": self.lastname,
-      u"username": self.username,
-      u"password": self.password,
-      u"salt": self.salt
-    }
-
   def __repr__(self) -> str:
     return f"User({self.username}, {self.id})"
 

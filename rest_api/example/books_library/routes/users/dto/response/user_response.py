@@ -10,3 +10,7 @@ class UserResponse(Schema):
 
 class UserId(Schema):
   id = fields.String()
+
+class UserResponseWithMessage(Schema):
+  message = fields.String()
+  data = fields.Nested(UserResponse)

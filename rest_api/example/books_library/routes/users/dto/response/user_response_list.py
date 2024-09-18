@@ -1,7 +1,6 @@
 from marshmallow import Schema, fields
 
+from .user_response import UserResponse
+
 class UserResponseList(Schema):
-  id = fields.String()
-  firstname = fields.String()
-  lastname = fields.String()
-  username = fields.String()
+  users = fields.List(fields.Nested(UserResponse))

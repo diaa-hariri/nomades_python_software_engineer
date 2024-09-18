@@ -5,6 +5,8 @@
 exercises/
 __pycache__/
 
+.coverage
+
 Flask_old/
 
 # firestore credential
@@ -41,3 +43,5 @@ numpy_pandas/student_exercises/corrections/numpy/
 numpy_pandas/student_exercises/implementations/data_aquisition/web_scrapping/IMDB/
 
 flask/
+
+rest_api/
