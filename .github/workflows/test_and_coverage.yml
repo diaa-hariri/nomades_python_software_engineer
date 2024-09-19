@@ -28,22 +28,18 @@ jobs:
         python -m pip install -r rest_api/example/books_library/requirements.txt
         pip install coverage codecov
     
+    # Step 4: Set up Firebase credentials
     - name: Set up Firebase credentials
       run: |
         echo "${{ secrets.FIREBASE_CREDENTIALS }}" | base64 --decode > rest_api/example/books_library/config/pse_2024_0809-cred.json
 
-    # Step 4: Run unit tests and generate coverage report
+    # Step 5: Run unit tests and generate coverage report
     - name: Run tests with coverage
       run: |
         python -m coverage run -m unittest discover -s rest_api/example/books_library/tests
         python -m coverage report -m
         python -m coverage xml
         python -m coverage html
-
-    # Step 5: Fail if coverage is less than 80%
-    - name: Check coverage threshold
-      run: |
-        python -m coverage report --fail-under=80
 
     # Step 6: Upload HTML coverage report as artifact
     - name: Upload HTML coverage report
@@ -59,4 +55,9 @@ jobs:
         files: coverage.xml
         # The following token is not needed for public repositories, but is required for private ones.
         token: ${{ secrets.CODECOV_TOKEN }}
+        
+    # Step 8: Fail if coverage is less than 80%
+    - name: Check coverage threshold
+      run: |
+        python -m coverage report --fail-under=80
 
