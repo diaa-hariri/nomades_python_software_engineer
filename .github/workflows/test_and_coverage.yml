@@ -14,7 +14,7 @@ jobs:
     # Step 1: Checkout the code
     - name: Checkout code
       uses: actions/checkout@v3
-      
+
     # Step 2: Set up Python
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -27,6 +27,10 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r rest_api/example/books_library/requirements.txt
         pip install coverage codecov
+    
+    - name: Set up Firebase credentials
+      run: |
+        echo "${{ secrets.FIREBASE_CREDENTIALS }}" | base64 --decode > rest_api/example/books_library/config/pse_2024_0809-cred.json
 
     # Step 4: Run unit tests and generate coverage report
     - name: Run tests with coverage
