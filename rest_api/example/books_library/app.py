@@ -2,6 +2,7 @@ from flask import Flask
 from flask_smorest import Api
 
 from routes.users.user_controller import users
+from routes.books.book_controller import books
 
 server = Flask(__name__)
 
@@ -17,6 +18,7 @@ server.config.from_object(APIConfig)
 
 api = Api(server)
 api.register_blueprint(users)
+api.register_blueprint(books)
 
 if __name__ == "__main__":
   server.run(debug=True, port=5050, host='0.0.0.0')
