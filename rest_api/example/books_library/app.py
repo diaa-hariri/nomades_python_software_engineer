@@ -20,3 +20,6 @@ api.register_blueprint(users)
 
 if __name__ == "__main__":
   server.run(debug=True, port=5050, host='0.0.0.0')
+
+
+  

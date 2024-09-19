@@ -26,7 +26,7 @@ class UserController(MethodView):
   @users.response(status_code=422)
   def post(self, user: dict):
     try:
-      return user_service.create_user(user_mapper.to_user(user))
+      return user_mapper.to_dict(user_service.create_user(user_mapper.to_user(user)))
     except ValueError as e:
       return {"message": str(e)}, 422
   
@@ -42,9 +42,18 @@ class SpecificUserController(MethodView):
   def put(self, id):
     return f"hello put users with id {id}"
   
-  def delete(self, id):
-    return f"hello delete users with id {id}"
-  
+@users.route("/<int:id>")
+class UserController(MethodView):
+  @users.doc(description="Delete a user by ID")
+  @users.response(status_code=200, description="User successfully deleted")
+  @users.response(status_code=404, description="User not found")
+  def delete(self, id: int):
+    try:
+      user_service.delete_user(id)
+      return {"message": f"User with ID {id} successfully deleted"}, 200
+    except UserNotFoundError:
+      return {"message": f"User with ID {id} not found"}, 404
+
 # Post request on /users/message will return a response containing a message saying that the user was created and the created user
 @users.route("/message", methods=["POST"])
 @users.arguments(CreateUserRequest)
