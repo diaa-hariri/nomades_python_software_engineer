@@ -14,3 +14,6 @@ run_coverages:
 	python -m coverage run ./tests/users/users_service_test.py
 	python -m coverage combine
 	python -m coverage report -m
+
+create_requirements:
+	pip list --format=freeze > requirements.txt
